@@ -4,11 +4,11 @@ from .models import NewsSource, Articles
 
 
 # Fetch API key
-api_key = None
+api_key = 'c445d1b3d30e47cbbb9c199771e8d3a9'
 
 # Fetch News Base Url
-source_base_url = None
-article_base_url = None
+source_base_url = 'https://newsapi.org/v2/top-headlines/sources?apiKey={}'
+article_base_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'
 
 
 def configure_request(app):
@@ -20,6 +20,7 @@ def configure_request(app):
 
 def get_sources():
     url_for_sources = source_base_url.format(api_key)
+    print(url_for_sources)
     with urllib.request.urlopen(url_for_sources) as data:
         sources_data = data.read()
         sources_response = json.loads(sources_data)
@@ -43,5 +44,8 @@ def process_source_results(sources_list):
         sources_results.append(source_object)
         
     return sources_results
+
+def get_articles():
+    
 
     
