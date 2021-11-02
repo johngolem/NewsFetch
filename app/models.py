@@ -3,10 +3,11 @@ class NewsSource:
     Movie class to define news object
     """
 
-    def __init__(self, id, name, url):
+    def __init__(self, id, name, url, category):
         self.name = name
         self.id = id
         self.url = url
+        self.category = category
 
 
 class Articles:

@@ -7,4 +7,41 @@ from .models import NewsSource, Articles
 api_key = None
 
 # Fetch News Base Url
-base_url = None
+source_base_url = None
+article_base_url = None
+
+
+def configure_request(app):
+    global api_key, source_base_url, article_base_url
+    api_key = app.config['NEWS_API_KEY']
+    source_base_url = app.config['SOURCE_BASE_URL']
+    article_base_url = app.config['ARTICLE_BASE_URL']
+
+
+def get_sources():
+    url_for_sources = source_base_url.format(api_key)
+    with urllib.request.urlopen(url_for_sources) as data:
+        sources_data = data.read()
+        sources_response = json.loads(sources_data)
+        
+        sources_results = None
+        
+        if sources_response['sources']:
+            sources_results_list = sources_response['sources']
+            sources_results = process_source_results(sources_results_list)
+    return sources_results
+
+def process_source_results(sources_list):
+    sources_results = []
+    for news_source in sources_list:
+        source_name = news_source.get('name')
+        source_id = news_source.get('id')
+        source_url = news_source.get('url')
+        source_category = news_source.get('category')
+        
+        source_object = NewsSource(source_name,source_id,source_url,source_category)
+        sources_results.append(source_object)
+        
+    return sources_results
+
+    

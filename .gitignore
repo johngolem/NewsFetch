@@ -3,4 +3,4 @@ virtual/
 __pycache
 .vscode
 .env
-start.sh
+.start.sh
