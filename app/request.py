@@ -45,7 +45,47 @@ def process_source_results(sources_list):
         
     return sources_results
 
-def get_articles():
-    
+def get_article(category):
+    get_article_url=article_base_url.format(category,api_key)
+
+    with urllib.request.urlopen(get_article_url) as url:
+        articles_data=url.read()
+        article_response =json.loads(articles_data)
+
+        articles_results=[]
+
+        if article_response['articles']:
+            articles_results_list=article_response['articles']
+            articles_results = process_articles(articles_results_list)
+            print(articles_results)
+    return articles_results
+
+def process_articles(articles_results_list):
+        '''
+        Function that processes the news articles result and transform them to a list of objects
+        Args:
+            article_list: a list of dictionaries that contain news articles details
+        Returns:
+            articles_result: a list of news articles objects
+        '''
+        articles_results = []
+        
+        for article_item in articles_results_list:
+            author = article_item.get('author')
+            title = article_item.get('title')
+            description = article_item.get('description')
+            url = article_item.get('url')
+            urlToImage = article_item.get('urlToImage')
+            publishedAt = article_item.get('publishedAt')
+            content = article_item.get('content')
+            id = article_item.get('id')
+            
+            if urlToImage:
+                articles_object = Articles(author,title,description,url,urlToImage,publishedAt,content,id)
+                articles_results.append(articles_object)
+        return articles_results
+ 
+           
+
 
     
