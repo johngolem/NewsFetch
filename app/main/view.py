@@ -1,11 +1,20 @@
-from flask import render_template
-from ..request import get_sources
+from flask import render_template,request,redirect,url_for
 from . import main
+from ..request import get_sources,get_article
 
-
-@main.route('/', methods=['GET'])
+@main.route('/', methods = ['GET'])
 def index():
-    source = get_sources()
-    print(source)
-
-    return render_template('index.html', source=source)
+    
+    UPDATES = get_sources()
+    title = "INT NEWS"
+    
+    
+    return render_template("index.html", UPDATES = UPDATES)
+   
+@main.route('/article/<id>') 
+def article(id):
+    
+    News = get_article(id)
+    Articles = get_article(id)
+    
+    return render_template('articles.html', News = News, Articles = Articles)    
