@@ -1,8 +1,10 @@
 {% extends 'base.html'%}
-{% block content %}
+{% block article %}
     <div class="container">
     </div>
     <div>
-        fiuyguriefhiuregrgr
+        {% for update in  UPDATES %}
+         <p>{{update.content}}</p>
+         {% endfor %}
     </div>
 {% endblock %}
