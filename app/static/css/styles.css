@@ -1,0 +1,31 @@
+
+/* .source_list {
+  list-style-type: square;
+  background: #3399ff;
+  padding: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  border: black 1px solid;
+  justify-content: space-around;
+  margin: 2rem 0;
+  width: 10%;
+} */
+
+.source_list{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* #sources{
+  border: solid black 2px;
+  display: flex;
+  flex-wrap: wrap;
+/* } */
+
+

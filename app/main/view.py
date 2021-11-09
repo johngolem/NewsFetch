@@ -11,10 +11,11 @@ def index():
     
     return render_template("index.html", UPDATES = UPDATES)
    
-@main.route('/article/<id>') 
+@main.route('/article/<id>')
+@main.route('/') 
 def article(id):
     
     News = get_article(id)
     Articles = get_article(id)
     
-    return render_template('articles.html', News = News, Articles = Articles)    
+    return render_template('articles.html', News = News, Articles = Articles,)    
