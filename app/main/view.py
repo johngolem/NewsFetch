@@ -12,7 +12,6 @@ def index():
     return render_template("index.html", UPDATES = UPDATES)
    
 @main.route('/article/<id>')
-@main.route('/') 
 def article(id):
     
     News = get_article(id)

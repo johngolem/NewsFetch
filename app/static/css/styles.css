@@ -14,13 +14,48 @@
 .source_list{
   display: flex;
   flex-wrap: wrap;
-  background-color: #fff;
+
+ 
+}
+#Indexx{
+  background-color: bisque;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 }
 
+#navvb {
+  background-color:gray;
+  font-size: larger;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: brown;
+}
+#heading{
+  background-color: lightgrey;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  flex-wrap: wrap;
+  display: flex;
+  border: bisque 1px solid;
+  justify-content: space-around;
+
+}
 html {
     scroll-behavior: smooth;
 }
 
+#footer{
+  background-color: bisque;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#abt{
+  display: flex;
+  border: bisque 1px solid;
+  justify-content: space-around;
+}
+#abts{
+  display: flex;
+  border: bisque 1px solid;
+  justify-content: space-around;
+}
 
 /* #sources{
   border: solid black 2px;
