@@ -1,9 +1,49 @@
 {% extends 'base.html'%}
 {% block article %}
-    <div id="articles" class="container">
+    <!-- <div id="articles" class="container">
     {% for article in Articles %}
     <div>
          <p>{{article.description}}</p>
     </div>
-    {% endfor %}
+    {% endfor %} -->
+
+    <!-- <div id="articles" class="container">
+        {% for article in Articles %}
+             <img src="{{article.urlTourlToImage}}" class="img-hover-zoom" alt="news image">
+        </div>
+        {% endfor %} -->
+
+        <div id="cardi" class="card-body ">
+            {% for article in Articles %}
+            <div class="tab-content text-center">
+              <div class="tab-pane active" id="profile">
+                <div class="myImage">
+                  <img src="{{article.urlToImage}}" class="img-hover-zoom" alt="news image">
+                </div>
+                <div id="textbox" style="clear: both;">
+                  <p class="alignleft"><i class="far fa-hand-point-right"
+                      style="font-size:15px;color:#feb300"></i><small class="text-muted">
+                      {{article.title}}</small></p>
+                </div>
+                <div class="heads">
+                    <p>
+                      {{article.description|truncate(180)}}..
+                    </p>
+                  </div>
+              </div>
+              <div class="tab-pane" id="{{article.author}}">
+                <h6>Article</h6>
+                <hr>
+                <p>
+                  {{article.content}}
+                </p>
+                <p class="alignright"><i class="far fa-clock" style="font-size:15px;color:#feb300"></i><small
+                    class="text-muted">
+                    {{article.publishedAt}}</small></p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+    
 {% endblock %}

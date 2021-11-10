@@ -1,4 +1,5 @@
 import urllib.request
+from urllib.parse import quote
 import json
 from .models import NewsSource, Articles
 

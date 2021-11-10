@@ -7,16 +7,39 @@
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
+#cardi {
+  background-color:#CDC0B0;
+  flex:wrap;
+  flex-wrap: wrap;
+  font-family: 'Oswald', sans-serif;
+
+  border: 0;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  border-radius: 6px;
+  color: rgba(0, 0, 0, .87);
+  width: 100%;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
 .navbar {
   background-color: #1c3459;
   padding-top: 40px;
+  color: aquamarine;
+}
+#navbarTogglerDemo03 {
+  color: aquamarine;
 }
 
-#articles{
-  background-color:bisque;
+.myImage {
+  /* border: 1px solid #ccc; */
+  height: 90px;
+}
+#articles {
+  background-color: bisque;
 }
 #navvb {
-  background-color: gray;
+  background-color:#8B8378;
   font-size: larger;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: brown;
