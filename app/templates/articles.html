@@ -1,20 +1,9 @@
 {% extends 'base.html'%}
 {% block article %}
-    <div class="container">
-    <!-- Article Poster background -->
-    <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 posterPath" style="background: url({{Articles.urlToImage}}) no-repeat center center">
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 movie-details">
-            <h3>{{ Articles.title }}</h3>
-            <p class="Author"> {{ Articles.author }}</p>
-        </div>
-    </div>
-        
-    </div>
+    <div id="articles" class="container">
+    {% for article in Articles %}
     <div>
-        {% for update in  UPDATES %}
-         <p>{{update.content}}</p>
-         {% endfor %}
+         <p>{{article.description}}</p>
     </div>
+    {% endfor %}
 {% endblock %}
