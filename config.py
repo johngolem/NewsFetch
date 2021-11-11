@@ -8,6 +8,7 @@ class Config:
     NEWS_API_KEY = 'c445d1b3d30e47cbbb9c199771e8d3a9'
     SOURCE_BASE_URL = 'https://newsapi.org/v2/top-headlines/sources?apiKey={}'
     ARTICLE_BASE_URL = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'
+    
 
 
 class ProdConfig(Config):
