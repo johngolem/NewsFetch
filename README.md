@@ -2,7 +2,7 @@
 
 ## @2021
 
-## JOHN PAUL ODERI=O
+## JOHN PAUL ODERO
 
 ## DESCRIPTION
 
